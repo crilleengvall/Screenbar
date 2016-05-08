@@ -33,10 +33,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func AutomaticScreenshot(sender: AnyObject) {
         if(self.timer.valid) {
             self.timer.invalidate()
+            self.ChangeTitleOfMenuItem("Automatic screenshot", index: 0)
         }
         else {
             self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: screenshotHandler, selector: #selector(ScreenShot.take), userInfo: nil, repeats: true)
+            self.ChangeTitleOfMenuItem("Stop automatic screenshot", index: 0)
         }
+    }
+    
+    func ChangeTitleOfMenuItem(title:String, index:Int) {
+        let item = statusItem.menu?.itemAtIndex(index)
+        item?.title = title
     }
     
     func terminate() {
