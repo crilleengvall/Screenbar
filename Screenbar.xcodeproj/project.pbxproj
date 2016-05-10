@@ -10,6 +10,7 @@
 		3D1C2F2B1CE235AF00FB8AB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1C2F291CE235AF00FB8AB8 /* SettingsViewController.swift */; };
 		3D1C2F2C1CE235AF00FB8AB8 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1C2F2A1CE235AF00FB8AB8 /* SettingsView.xib */; };
 		3D1C2F2E1CE2546900FB8AB8 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1C2F2D1CE2546900FB8AB8 /* EventMonitor.swift */; };
+		3D1C2F331CE2670400FB8AB8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1C2F321CE2670400FB8AB8 /* Settings.swift */; };
 		3D1FD3F91CDE243F00C89BB9 /* NSharpDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1FD3F81CDE243F00C89BB9 /* NSharpDate.swift */; };
 		3DA791FD1CDBC45C00F60252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA791FC1CDBC45C00F60252 /* AppDelegate.swift */; };
 		3DA791FF1CDBC45C00F60252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA791FE1CDBC45C00F60252 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		3D1C2F291CE235AF00FB8AB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3D1C2F2A1CE235AF00FB8AB8 /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		3D1C2F2D1CE2546900FB8AB8 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		3D1C2F321CE2670400FB8AB8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		3D1FD3F81CDE243F00C89BB9 /* NSharpDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSharpDate.swift; sourceTree = "<group>"; };
 		3DA791F91CDBC45C00F60252 /* Screenbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Screenbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA791FC1CDBC45C00F60252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				3DB4D6B01CDCED5C001F5011 /* ScreenShot.swift */,
 				3D1FD3F81CDE243F00C89BB9 /* NSharpDate.swift */,
 				3D1C2F2D1CE2546900FB8AB8 /* EventMonitor.swift */,
+				3D1C2F321CE2670400FB8AB8 /* Settings.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1C2F331CE2670400FB8AB8 /* Settings.swift in Sources */,
 				3DA791FD1CDBC45C00F60252 /* AppDelegate.swift in Sources */,
 				3D1C2F2E1CE2546900FB8AB8 /* EventMonitor.swift in Sources */,
 				3D1FD3F91CDE243F00C89BB9 /* NSharpDate.swift in Sources */,

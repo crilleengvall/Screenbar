@@ -45,18 +45,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func startAutomaticScreenshot() {
-        let seconds = self.getIntervalSecondsSetting()
+        let seconds = Settings.getSecondsInterval()
         self.timer = NSTimer.scheduledTimerWithTimeInterval(seconds!, target: screenshotHandler, selector: #selector(ScreenShot.take), userInfo: nil, repeats: true)
         self.ChangeTitleOfMenuItem("Stop automatic screenshot", index: 0)
-    }
-    
-    func getIntervalSecondsSetting() -> Double? {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        var seconds: Double? = defaults.doubleForKey("seconds")
-        if(seconds == nil) {
-            seconds = 1.0
-        }
-        return seconds
     }
     
     func stopAutomaticScreenShot() {

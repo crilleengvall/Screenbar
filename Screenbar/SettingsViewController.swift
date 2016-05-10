@@ -11,8 +11,7 @@ class SettingsViewController: NSViewController {
     }
     
     func setSeconds() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let seconds: Double? = defaults.doubleForKey("seconds")
+        let seconds: Double? = Settings.getSecondsInterval()
         self.secondsTextBox.stringValue = String(seconds!)
     }
     
@@ -25,8 +24,7 @@ class SettingsViewController: NSViewController {
     }
     
     func saveSettings(seconds: Double?) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setDouble(seconds!, forKey: "seconds")
+        Settings.setSecondsIntervall(seconds)
     }
     
     func close() {
