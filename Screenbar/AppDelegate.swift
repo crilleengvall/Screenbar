@@ -65,7 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func initSettingsPopover() {
-        settingsPopover.contentViewController = SettingsViewController(nibName: "SettingsViewController", bundle: nil)
+        settingsPopover.contentViewController = SettingsViewController(nibName: "SettingsView", bundle: nil)
     }
     
     func initEventMonitor() {

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D1C2F2B1CE235AF00FB8AB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1C2F291CE235AF00FB8AB8 /* SettingsViewController.swift */; };
-		3D1C2F2C1CE235AF00FB8AB8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1C2F2A1CE235AF00FB8AB8 /* SettingsViewController.xib */; };
+		3D1C2F2C1CE235AF00FB8AB8 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1C2F2A1CE235AF00FB8AB8 /* SettingsView.xib */; };
 		3D1C2F2E1CE2546900FB8AB8 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1C2F2D1CE2546900FB8AB8 /* EventMonitor.swift */; };
 		3D1FD3F91CDE243F00C89BB9 /* NSharpDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1FD3F81CDE243F00C89BB9 /* NSharpDate.swift */; };
 		3DA791FD1CDBC45C00F60252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA791FC1CDBC45C00F60252 /* AppDelegate.swift */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		3D1C2F291CE235AF00FB8AB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		3D1C2F2A1CE235AF00FB8AB8 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		3D1C2F2A1CE235AF00FB8AB8 /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		3D1C2F2D1CE2546900FB8AB8 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		3D1FD3F81CDE243F00C89BB9 /* NSharpDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSharpDate.swift; sourceTree = "<group>"; };
 		3DA791F91CDBC45C00F60252 /* Screenbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Screenbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +41,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D1C2F2F1CE265A500FB8AB8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D1C2F291CE235AF00FB8AB8 /* SettingsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3D1C2F301CE265BA00FB8AB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DA792001CDBC45C00F60252 /* MainMenu.xib */,
+				3D1C2F2A1CE235AF00FB8AB8 /* SettingsView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3D1C2F311CE2661600FB8AB8 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3DB4D6B01CDCED5C001F5011 /* ScreenShot.swift */,
+				3D1FD3F81CDE243F00C89BB9 /* NSharpDate.swift */,
+				3D1C2F2D1CE2546900FB8AB8 /* EventMonitor.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		3DA791F01CDBC45C00F60252 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +87,12 @@
 		3DA791FB1CDBC45C00F60252 /* Screenbar */ = {
 			isa = PBXGroup;
 			children = (
+				3D1C2F2F1CE265A500FB8AB8 /* Controllers */,
+				3D1C2F311CE2661600FB8AB8 /* Library */,
+				3D1C2F301CE265BA00FB8AB8 /* Views */,
 				3DA791FC1CDBC45C00F60252 /* AppDelegate.swift */,
-				3D1C2F291CE235AF00FB8AB8 /* SettingsViewController.swift */,
-				3D1C2F2A1CE235AF00FB8AB8 /* SettingsViewController.xib */,
 				3DA791FE1CDBC45C00F60252 /* Assets.xcassets */,
-				3DA792001CDBC45C00F60252 /* MainMenu.xib */,
 				3DA792031CDBC45C00F60252 /* Info.plist */,
-				3DB4D6B01CDCED5C001F5011 /* ScreenShot.swift */,
-				3D1FD3F81CDE243F00C89BB9 /* NSharpDate.swift */,
-				3D1C2F2D1CE2546900FB8AB8 /* EventMonitor.swift */,
 			);
 			path = Screenbar;
 			sourceTree = "<group>";
@@ -132,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DA791FF1CDBC45C00F60252 /* Assets.xcassets in Resources */,
-				3D1C2F2C1CE235AF00FB8AB8 /* SettingsViewController.xib in Resources */,
+				3D1C2F2C1CE235AF00FB8AB8 /* SettingsView.xib in Resources */,
 				3DA792021CDBC45C00F60252 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
