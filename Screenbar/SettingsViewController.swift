@@ -1,13 +1,15 @@
 import Cocoa
 
 class SettingsViewController: NSViewController {
-    @IBOutlet var secondsTextBox: NSTextField!
-    @IBOutlet var errorMessage: NSTextField!
+    @IBOutlet weak var secondsTextBox: NSTextField!
+    @IBOutlet weak var errorMessage: NSTextField!
+    @IBOutlet weak var path: NSPathControl!
     
     override func viewWillAppear() {
         super.viewWillAppear()
         self.setSeconds()
         self.hideError()
+        self.setPath()
     }
     
     func setSeconds() {
@@ -23,8 +25,14 @@ class SettingsViewController: NSViewController {
         self.errorMessage.hidden = true
     }
     
-    func saveSettings(seconds: Double?) {
+    func saveSettings(seconds: Double?, path: NSURL?) {
         Settings.setSecondsIntervall(seconds)
+        Settings.setPath(path)
+    }
+    
+    func setPath() {
+        self.path.URL = Settings.getPath()
+        self.path.allowedTypes = ["public.folder"]
     }
     
     func close() {
@@ -35,13 +43,14 @@ class SettingsViewController: NSViewController {
 
 extension SettingsViewController{
     
-    @IBAction func saveSeconds(sender: NSButton){
+    @IBAction func saveSettings(sender: NSButton){
         let seconds: Double? = Double(self.secondsTextBox.stringValue)
+        let path: NSURL? = self.path.URL
         if(seconds == nil) {
             self.showError()
         }
         else {
-            self.saveSettings(seconds)
+            self.saveSettings(seconds, path: path)
             self.close()
         }
     }

@@ -7,7 +7,7 @@ class ScreenShot : NSObject {
         let dateString = date.toStringByShortTimeFormat().stringByReplacingOccurrencesOfString(":", withString: ".", options: NSStringCompareOptions.LiteralSearch, range: nil)
         let task = NSTask()
         task.launchPath = "/usr/sbin/screencapture"
-        task.arguments = [NSHomeDirectory() + "/Desktop/Screenshot-" + dateString + ".png"]
+        task.arguments = [Settings.getPath().path! + "/Screenshot-" + dateString + ".png"]
         task.launch()
     }
 }
