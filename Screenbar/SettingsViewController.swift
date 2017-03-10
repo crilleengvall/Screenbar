@@ -18,34 +18,34 @@ class SettingsViewController: NSViewController {
     }
     
     func showError() {
-        self.errorMessage.hidden = false
+        self.errorMessage.isHidden = false
     }
     
     func hideError() {
-        self.errorMessage.hidden = true
+        self.errorMessage.isHidden = true
     }
     
-    func saveSettings(seconds: Double?, path: NSURL?) {
+    func saveSettings(_ seconds: Double?, path: URL?) {
         Settings.setSecondsIntervall(seconds)
         Settings.setPath(path)
     }
     
     func setPath() {
-        self.path.URL = Settings.getPath()
+        self.path.url = Settings.getPath() as URL
         self.path.allowedTypes = ["public.folder"]
     }
     
     func close() {
-        let appDelegate : AppDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate : AppDelegate = NSApplication.shared().delegate as! AppDelegate
         appDelegate.hideSettings(self)
     }
 }
 
 extension SettingsViewController{
     
-    @IBAction func saveSettings(sender: NSButton){
+    @IBAction func saveSettings(_ sender: NSButton){
         let seconds: Double? = Double(self.secondsTextBox.stringValue)
-        let path: NSURL? = self.path.URL
+        let path: URL? = self.path.url
         if(seconds == nil) {
             self.showError()
         }

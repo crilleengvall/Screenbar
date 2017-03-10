@@ -5,30 +5,30 @@ class Settings : NSObject {
     static var secondsKey = "seconds"
     static var pathKey = "savePath"
     
-    static func setSecondsIntervall(seconds: Double?) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setDouble(seconds!, forKey: secondsKey)
+    static func setSecondsIntervall(_ seconds: Double?) {
+        let defaults = UserDefaults.standard
+        defaults.set(seconds!, forKey: secondsKey)
     }
     
     static func getSecondsInterval() -> Double? {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        var seconds: Double? = defaults.doubleForKey(secondsKey)
+        let defaults = UserDefaults.standard
+        var seconds: Double? = defaults.double(forKey: secondsKey)
         if(seconds == nil) {
             seconds = 1.0
         }
         return seconds
     }
     
-    static func setPath(path: NSURL?) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setURL(path, forKey: pathKey)
+    static func setPath(_ path: URL?) {
+        let defaults = UserDefaults.standard
+        defaults.set(path, forKey: pathKey)
     }
     
-    static func getPath() -> NSURL {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        var path : NSURL? = defaults.URLForKey(pathKey)
+    static func getPath() -> URL {
+        let defaults = UserDefaults.standard
+        var path : URL? = defaults.url(forKey: pathKey)
         if(path == nil) {
-            path = NSURL(string: NSHomeDirectory() + "/Desktop/")
+            path = URL(string: NSHomeDirectory() + "/Desktop/")
         }
         return path!
     }

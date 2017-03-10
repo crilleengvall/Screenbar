@@ -4,26 +4,26 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
+    let statusItem = NSStatusBar.system().statusItem(withLength: -2)
     let screenshotHandler = ScreenShot()
-    var timer: NSTimer = NSTimer()
+    var timer: Timer = Timer()
     let settingsPopover = NSPopover()
     var eventMonitor : EventMonitor?
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.addMenu()
         self.addImage()
         self.initSettingsPopover()
         self.initEventMonitor()
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
     }
     
     func addMenu() {
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Automatic screenshot", action: #selector(self.automaticScreenshot(_:)), keyEquivalent: "P"))
-        menu.addItem(NSMenuItem.separatorItem())
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Settings...", action: #selector(self.showSettings), keyEquivalent: "S"))
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(self.terminate), keyEquivalent: "q"))
         statusItem.menu = menu
@@ -35,8 +35,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func automaticScreenshot(sender: AnyObject) {
-        if(self.timer.valid) {
+    func automaticScreenshot(_ sender: AnyObject) {
+        if(self.timer.isValid) {
             self.stopAutomaticScreenShot()
         }
         else {
@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func startAutomaticScreenshot() {
         let seconds = Settings.getSecondsInterval()
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(seconds!, target: screenshotHandler, selector: #selector(ScreenShot.take), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: seconds!, target: screenshotHandler, selector: #selector(ScreenShot.take), userInfo: nil, repeats: true)
         self.ChangeTitleOfMenuItem("Stop automatic screenshot", index: 0)
     }
     
@@ -60,8 +60,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func initEventMonitor() {
-        eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) { [unowned self] event in
-            if self.settingsPopover.shown {
+        eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [unowned self] event in
+            if self.settingsPopover.isShown {
                 self.hideSettings(event)
             }
         }
@@ -70,18 +70,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showSettings() {
         if let button = statusItem.button {
-            settingsPopover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+            settingsPopover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             eventMonitor?.start()
         }
     }
     
-    func hideSettings(sender: AnyObject?) {
+    func hideSettings(_ sender: AnyObject?) {
         settingsPopover.performClose(sender)
         eventMonitor?.stop()
     }
     
-    func ChangeTitleOfMenuItem(title:String, index:Int) {
-        let item = statusItem.menu?.itemAtIndex(index)
+    func ChangeTitleOfMenuItem(_ title:String, index:Int) {
+        let item = statusItem.menu?.item(at: index)
         item?.title = title
     }
     
