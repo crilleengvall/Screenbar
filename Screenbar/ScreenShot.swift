@@ -8,7 +8,12 @@ class ScreenShot : NSObject {
         let dateString = self.getDate()
         let task = Process()
         task.launchPath = "/usr/sbin/screencapture"
-        task.arguments = [Settings.getPath().path + "/Screenshot-" + dateString + ".png"]
+        var arguments = [String]();
+        if(Settings.getPlaySound() == 0) {
+            arguments.append("-x")
+        }
+        arguments.append(Settings.getPath().path + "/Screenshot-" + dateString + ".png")
+        task.arguments = arguments
         task.launch()
     }
     

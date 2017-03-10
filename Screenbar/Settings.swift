@@ -4,6 +4,7 @@ class Settings : NSObject {
 
     static var secondsKey = "seconds"
     static var pathKey = "savePath"
+    static var playSoundKey = "playSound"
     
     static func setSecondsIntervall(_ seconds: Double?) {
         let defaults = UserDefaults.standard
@@ -31,5 +32,19 @@ class Settings : NSObject {
             path = URL(string: NSHomeDirectory() + "/Desktop/")
         }
         return path!
+    }
+    
+    static func setPlaySound(_ state: Int?) {
+        let defaults = UserDefaults.standard
+        defaults.set(state, forKey: playSoundKey)
+    }
+    
+    static func getPlaySound() -> Int {
+        let defaults = UserDefaults.standard
+        var state : Int? = defaults.integer(forKey: playSoundKey)
+        if(state == nil) {
+            state = 0;
+        }
+        return state!;
     }
 }
