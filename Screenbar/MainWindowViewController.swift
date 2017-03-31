@@ -53,7 +53,7 @@ class MainWindowViewController: NSViewController {
     
     @IBAction func CaptureScreenshots(_ sender: Any) {
         if(self.saveSettings()) {
-            self.automaticScreenshot();
+            self.automaticScreenshot()
         }
     }
     
