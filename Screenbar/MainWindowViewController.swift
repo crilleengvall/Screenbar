@@ -1,6 +1,7 @@
 import Cocoa
 
-class SettingsViewController: NSViewController {
+class MainWindowViewController: NSViewController {
+    
     @IBOutlet weak var secondsTextBox: NSTextField!
     @IBOutlet weak var errorMessage: NSTextField!
     @IBOutlet weak var path: NSPathControl!
@@ -47,7 +48,7 @@ class SettingsViewController: NSViewController {
     
     func close() {
         let appDelegate : AppDelegate = NSApplication.shared().delegate as! AppDelegate
-        appDelegate.hideSettings(self)
+        appDelegate.hideMainWindow(self)
     }
     
     @IBAction func CaptureScreenshots(_ sender: Any) {
