@@ -39,8 +39,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showMainWindow() {
         if let button = statusItem.button {
-            self.mainWindowPopover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-            eventMonitor?.start()
+            if(self.mainWindowPopover.isShown) {
+                self.hideMainWindow(self)
+            }
+            else {
+                self.mainWindowPopover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+                eventMonitor?.start()
+            }
         }
     }
     
