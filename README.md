@@ -1,5 +1,5 @@
 # Screenbar
-An osx menubar app for automating screenshots.    
+A macOS menubar app for automating screenshots.    
 ![Screenbar menu bar](https://www.screenbar.net/assets/images/screenbar-window.png "Screenbar main")    
 
 ## Features
