@@ -1,4 +1,3 @@
-![Screenbar](http://www.christianengvall.se/wp-content/uploads/2017/03/screenbar.png "Screenbar main menu")
 # Screenbar
 An osx menubar app for automating screenshots.    
 ![Screenbar menu bar](https://www.screenbar.net/assets/images/screenbar-window.png "Screenbar main")    
